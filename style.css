@@ -1,0 +1,109 @@
+::before, *::after {
+    box-sizing: border-box;
+  }
+  * {
+    margin: 0;
+  }
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  input, button, textarea, select {
+    font: inherit;
+  }
+
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+:root {
+    --clr-green: hsl(158, 36%, 37%);
+    --clr-cream: hsl(30, 38%, 92%);
+    
+    --ff-accent: 'Fraunces', serif;
+    --ff-base: 'Montserrat', sans-serif;
+
+    --clr-Darkblue: hsl(212, 21%, 14%);
+    --clr-Greyishblue: hsl(228, 12%, 48%);
+    --clr-White: hsl(0, 0%, 100%);
+}
+
+body{
+    font-family: var(--ff-base);
+    font-size: 0.875rem;
+    color: var(--clr-Greyishblue);
+    background-color: var(--clr-cream);
+
+    display: grid;
+    min-height: 100vh;
+    place-content: center;
+    margin: 1rem;
+}
+.product {
+    --content-padding: 1.5rem;
+    --contenet-spacing: 1rem;
+    display: grid;
+    background-color: var(--clr-White);
+    border-radius: 1rem;
+    overflow: hidden;
+    max-width: 600px;
+}
+@media (min-width: 768px) {
+    .product {
+        --content-padding: 2rem;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.product_content {
+    padding: var(--content-padding);
+    display: grid;
+    gap: var(--contenet-spacing);
+}
+.product_content h3 {
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-weight: 400;
+    font-size: 0.9rem;
+}
+.product_content h1 {
+    font-size: 2.2rem;
+    color: var(--clr-Darkblue);
+    font-family: var(--ff-accent);
+    line-height: 1; 
+    
+}
+.product_content p {
+    line-height: 2;
+}
+.product_content div {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;  
+  flex-wrap: wrap;
+}
+.product_content div h1 {
+    color: var(--clr-green);
+}
+.product button {
+    cursor: pointer;
+    padding: 0.8rem 1.5rem;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    border: none;
+    background-color: var(--clr-green);
+    color: white;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+
+.product button:is(:hover, :focus) {
+    background-color: hsl(158, 36%, 20%);
+}
+
